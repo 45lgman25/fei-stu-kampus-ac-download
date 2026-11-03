@@ -1,16 +1,19 @@
 # FEI STU Kampus – Assetto Corsa trať (UNIfai esport)
 
-Pouličný okruh kampusom FEI/FIIT STU v Mlynskej doline (Bratislava), 1383 m, v smere hodinových ručičiek.
+Pouličný okruh kampusom FEI/FIIT STU v Mlynskej doline (Bratislava), v smere hodinových ručičiek.
 Reálny terén z laserového skenovania (DMR 5.0), ortofoto, budovy a cesty z OpenStreetMap,
-bočné cesty uzavreté zábranami, branding UNIfai esport × FEI STU.
+celá trať lemovaná bariérami, boxy popri východnej rovinke, branding UNIfai esport × FEI STU.
 
-## Stiahnutie
-Najnovší ZIP je v sekcii **Releases** vpravo (súbor `fei_stu_kampus.zip`).
+## Stiahnutie (najnovšia verzia)
+- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/releases/latest/download/fei_stu_kampus_motokary.zip)
+- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/releases/latest/download/fei_stu_kampus_auta.zip)
+
+Obe sú samostatné trate, dajú sa mať nainštalované naraz. Staršie verzie sú v sekcii **Releases**.
 
 ## Inštalácia
 1. Rozbaľ ZIP.
-2. Priečinok `fei_stu_kampus` skopíruj do `...\steamapps\common\assettocorsa\content\tracks\`
-   (alebo ZIP pretiahni do Content Managera).
+2. Priečinok (`fei_stu_kampus` alebo `fei_stu_kampus_auta`) skopíruj do `...\steamapps\common\assettocorsa\content\tracks\`
+   (alebo ZIP pretiahni do Content Managera). Staršiu verziu najprv zmaž.
 3. Na plnú grafiku: Content Manager + Custom Shaders Patch + Pure/Sol (GrassFX, RainFX, nočné svetlá).
 
 Podrobnosti sú v `NAVOD.txt` v ZIPe.
