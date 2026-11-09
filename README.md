@@ -20,3 +20,13 @@ Podrobnosti sú v `NAVOD.txt` v ZIPe.
 
 Zdroje dát: © ÚGKK SR (DMR 5.0, DMP 1.0, Ortofotomozaika SR), © OpenStreetMap prispievatelia (ODbL),
 Sentinel-2 cloudless – s2maps.eu by EOX IT Services GmbH (CC BY 4.0), Terrarium elevation tiles.
+
+---
+
+# Okruh Mlynská dolina – Assetto Corsa trať (v2.8)
+
+Nový 4,7 km pouličný okruh Mlynskou dolinou (FEI/FIIT, internáty, Staré Grunty, cintorín Slávičie údolie),
+boxy pri cintoríne, stromy, tráva, budovy a logá UNIfai esport × FEI STU, skontrolované so Street View.
+
+- **Stiahnuť:** [fei_mlynska_dolina.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/okruh-mlynska-dolina/fei_mlynska_dolina.zip) (~80 MB)
+- **Inštalácia:** rozbaľ, priečinok `fei_mlynska_dolina` skopíruj do `assettocorsa\content\tracks\` (staršiu verziu najprv zmaž). Návod v `NAVOD.txt`.
