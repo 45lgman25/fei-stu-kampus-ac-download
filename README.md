@@ -23,7 +23,7 @@ Sentinel-2 cloudless – s2maps.eu by EOX IT Services GmbH (CC BY 4.0), Terrariu
 
 ---
 
-# Okruh Mlynská dolina – Assetto Corsa trať (v2.8)
+# Okruh Mlynská dolina – Assetto Corsa trať (v3.0)
 
 Nový 4,7 km pouličný okruh Mlynskou dolinou (FEI/FIIT, internáty, Staré Grunty, cintorín Slávičie údolie),
 boxy pri cintoríne, stromy, tráva, budovy a logá UNIfai esport × FEI STU, skontrolované so Street View.
