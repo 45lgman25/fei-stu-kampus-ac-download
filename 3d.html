@@ -1,0 +1,422 @@
+<!doctype html><html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html,body{margin:0;height:100%}</style></head><body><title>FEI STU Kampus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: full-bleed 3D scene; a timing-screen style panel docks bottom-left (bottom sheet on phones). */
+:root {
+  --sky: #a9c7e2;
+  --panel: rgba(16, 20, 24, 0.86);
+  --panel-line: rgba(255, 255, 255, 0.12);
+  --fg: #eef1ec;
+  --muted: #a3ada8;
+  --accent: #f3c331;        /* curb / timing yellow */
+  --accent-ink: #1a1606;
+  --display: "Saira Condensed", "Arial Narrow", sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+[hidden] { display: none !important; }
+body { background: var(--sky); color: var(--fg); font-family: var(--body); overflow: hidden; }
+#scene { position: fixed; inset: 0; display: block; width: 100%; height: 100%; touch-action: none; }
+
+.panel {
+  position: fixed;
+  left: calc(16px + env(safe-area-inset-left, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: min(420px, calc(100% - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)));
+  background: var(--panel);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--panel-line);
+  border-radius: 6px;
+  padding-block: 14px;
+  padding-inline: 16px;
+  display: grid;
+  gap: 12px;
+}
+.eyebrow { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 4px 0 0; font: 800 34px/0.95 var(--display); letter-spacing: .01em; text-transform: uppercase; text-wrap: balance; }
+h1 span { color: var(--accent); }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; border-block: 1px solid var(--panel-line); padding-block: 10px; }
+.stat b { display: block; font: 600 22px/1 var(--display); font-variant-numeric: tabular-nums; }
+.stat small { font-size: 11px; color: var(--muted); }
+.views { display: flex; flex-wrap: wrap; gap: 6px; }
+button {
+  font: 500 13px/1 var(--body); color: var(--fg); background: transparent;
+  border: 1px solid var(--panel-line); border-radius: 4px; padding: 8px 10px; cursor: pointer;
+}
+button:hover { border-color: var(--muted); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.profile { display: grid; gap: 4px; }
+.profile-head { display: flex; justify-content: space-between; gap: 8px; font: 500 12px/1.2 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.profile-head strong { color: var(--fg); font-weight: 500; }
+svg { width: 100%; height: auto; display: block; }
+.note { margin: 0; font-size: 12px; line-height: 1.45; color: var(--muted); }
+
+#loader {
+  position: fixed; inset: 0; display: grid; place-items: center; background: var(--sky);
+  padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+}
+#loader .box { width: min(360px, 100%); background: var(--panel); border-radius: 6px; padding: 18px; display: grid; gap: 10px; }
+#loader .bar { height: 6px; background: var(--panel-line); border-radius: 3px; overflow: hidden; }
+#loader .bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+#loader p { margin: 0; font: 500 12px/1.3 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 560px) {
+  .panel { left: 0; right: 0; bottom: 0; width: auto; border-radius: 10px 10px 0 0; border-inline: 0;
+    padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+    padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px)); gap: 10px; }
+  h1 { font-size: 26px; }
+  .stat b { font-size: 18px; }
+  .note { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { #loader .bar i { transition: none; } }
+</style>
+
+<canvas id="scene" aria-label="3D model trate FEI STU Kampus"></canvas>
+
+<div id="loader" role="status">
+  <div class="box">
+    <div class="eyebrow">Assetto Corsa · náhľad trate</div>
+    <div class="bar"><i id="bar"></i></div>
+    <p id="loadtext">Načítavam terén a budovy…</p>
+  </div>
+</div>
+
+<section class="panel" aria-label="Ovládanie náhľadu">
+  <div>
+    <div class="eyebrow">UNIfai esport · Mlynská dolina · Bratislava</div>
+    <h1>FEI STU <span>Kampus</span></h1>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="lapm">1383</b><small>m kolo</small></div>
+    <div class="stat"><b id="climb">19,7</b><small>m prevýšenie</small></div>
+    <div class="stat"><b>10</b><small>boxov</small></div>
+    <div class="stat"><b>CW</b><small>v smere hod.</small></div>
+  </div>
+  <div class="views" role="group" aria-label="Pohľady">
+    <button id="drive" class="primary" type="button">▶ Prejdi kolo</button>
+    <button type="button" data-view="start">Štart</button>
+    <button type="button" data-view="top">Zhora</button>
+    <button type="button" data-view="Kamzík">Kamzík</button>
+    <button type="button" data-view="Hrad">Hrad</button>
+    <button type="button" data-view="UFO / Most SNP">UFO</button>
+    <button type="button" data-view="Devínska Kobyla">Devínska Kobyla</button>
+  </div>
+  <div class="profile">
+    <div class="profile-head">
+      <span>Výškový profil kola</span>
+      <span><strong id="pos-d">0</strong> m · <strong id="pos-h">–</strong> m n. m. · <strong id="pos-s">–</strong> %</span>
+    </div>
+    <svg id="profile" viewBox="0 0 400 86" role="img" aria-label="Výškový profil okruhu"></svg>
+  </div>
+  <p class="note">Pouličný okruh kampusom, bočné cesty uzavreté zábranami. Ťahaj myšou pre otáčanie, koliesko pre zoom. Terén DMR 5.0, DMP 1.0 a ortofoto © ÚGKK SR, budovy © OpenStreetMap, horizont mimo SR Sentinel-2 (EOX).</p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/objects/Sky.js"></script>
+<script>
+(async () => {
+  const bar = document.getElementById('bar');
+  const loadtext = document.getElementById('loadtext');
+  const fmt = (v, d = 0) => v.toLocaleString('sk-SK', { minimumFractionDigits: d, maximumFractionDigits: d });
+
+  const canvas = document.getElementById('scene');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, logarithmicDepthBuffer: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 0.85;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0xc9d8e6, 3000, 40000);
+  const camera = new THREE.PerspectiveCamera(58, 1, 0.3, 60000);
+
+  // physical sky, afternoon sun from the south-west (same direction as the shadows)
+  const sunDir = new THREE.Vector3().setFromSphericalCoords(1, THREE.MathUtils.degToRad(90 - 32), THREE.MathUtils.degToRad(215));
+  const sky = new THREE.Sky();
+  sky.scale.setScalar(50000);
+  const su = sky.material.uniforms;
+  su.turbidity.value = 5; su.rayleigh.value = 1.4; su.mieCoefficient.value = 0.004; su.mieDirectionalG.value = 0.8;
+  su.sunPosition.value.copy(sunDir);
+  scene.add(sky);
+  scene.add(new THREE.HemisphereLight(0xcfe0f2, 0x4f5442, 0.75));
+  const sun = new THREE.DirectionalLight(0xfff1dc, 2.1);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(4096, 4096);
+  sun.shadow.bias = -0.0004;
+  sun.shadow.normalBias = 0.6;
+  const sc = sun.shadow.camera;
+  sc.left = -260; sc.right = 260; sc.top = 260; sc.bottom = -260; sc.near = 1; sc.far = 1600;
+  scene.add(sun, sun.target);
+  const controls = new THREE.OrbitControls(camera, canvas);
+  controls.enableDamping = true;
+  controls.maxDistance = 30000;
+
+  function resize() {
+    const w = innerWidth, h = innerHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  addEventListener('resize', resize);
+  resize();
+
+  const manifest = await (await fetch('manifest.json')).json();
+  const H0 = manifest.h0;
+
+  // textures
+  const texNames = [...new Set(manifest.materials.flatMap(m => [m.texture, m.normal, m.maps]).filter(Boolean))];
+  const dataTex = new Set(manifest.materials.flatMap(m => [m.normal, m.maps]).filter(Boolean));
+  const totalBytes = manifest.pngSizes.reduce((a, b) => a + b, 0);
+  let loadedBytes = 0;
+  const progress = () => { bar.style.width = `${Math.min(100, loadedBytes / totalBytes * 100)}%`; };
+  const textures = {};
+  await Promise.all(texNames.map(async name => {
+    let bmp;
+    try {
+      const res = await fetch(name);
+      if (!res.ok) throw new Error(res.status);
+      bmp = await createImageBitmap(await res.blob());
+    } catch (err) {
+      console.warn('texture skipped', name, err);   // one missing texture must not stop the preview
+      return;
+    }
+    const t = new THREE.Texture(bmp);
+    t.flipY = false;
+    t.wrapS = t.wrapT = THREE.RepeatWrapping;
+    t.encoding = dataTex.has(name) ? THREE.LinearEncoding : THREE.sRGBEncoding;
+    t.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    t.needsUpdate = true;
+    textures[name] = t;
+  }));
+  // sky gradient cube for reflections in glass and wet-looking asphalt
+  function skyCube() {
+    const faces = [];
+    for (let f = 0; f < 6; f++) {
+      const c = document.createElement('canvas'); c.width = c.height = 64;
+      const g = c.getContext('2d');
+      const grad = g.createLinearGradient(0, 0, 0, 64);
+      if (f === 2) { grad.addColorStop(0, '#6f9fd0'); grad.addColorStop(1, '#6f9fd0'); }
+      else if (f === 3) { grad.addColorStop(0, '#5b6150'); grad.addColorStop(1, '#5b6150'); }
+      else { grad.addColorStop(0, '#6f9fd0'); grad.addColorStop(0.5, '#d4e3f1'); grad.addColorStop(0.55, '#7d8a76'); grad.addColorStop(1, '#55604f'); }
+      g.fillStyle = grad; g.fillRect(0, 0, 64, 64);
+      faces.push(c);
+    }
+    const t = new THREE.CubeTexture(faces); t.needsUpdate = true; t.encoding = THREE.sRGBEncoding;
+    return t;
+  }
+  const env = skyCube();
+  const materials = manifest.materials.map(m => {
+    const glassy = (m.name || '').startsWith('facade');
+    const opts = { map: textures[m.texture] || null, alphaTest: m.alphaTest ? 0.5 : 0, shininess: glassy ? 60 : 12,
+                   specular: new THREE.Color(glassy ? 0x666666 : 0x181818) };
+    if (m.normal && textures[m.normal]) { opts.normalMap = textures[m.normal]; opts.normalScale = new THREE.Vector2(1, -1); }
+    if (m.maps && textures[m.maps]) { opts.specularMap = textures[m.maps]; opts.envMap = env; opts.reflectivity = glassy ? 0.75 : 0.08; }
+    return new THREE.MeshPhongMaterial(opts);
+  });
+
+  // geometry parts: raw bytes stored losslessly in the RGB channels of PNG images
+  async function fetchPart(url, i) {
+    const png = await fetchBytes(url);
+    const bmp = await createImageBitmap(new Blob([png], { type: 'image/png' }),
+      { premultiplyAlpha: 'none', colorSpaceConversion: 'none' });
+    const c = document.createElement('canvas');
+    c.width = bmp.width; c.height = bmp.height;
+    const ctx = c.getContext('2d', { willReadFrequently: true });
+    ctx.drawImage(bmp, 0, 0);
+    const rgba = ctx.getImageData(0, 0, bmp.width, bmp.height).data;
+    const size = manifest.sizes[i];
+    const out = new Uint8Array(size);
+    for (let s = 0, d = 0; d < size; s += 4) {
+      out[d++] = rgba[s];
+      if (d < size) out[d++] = rgba[s + 1];
+      if (d < size) out[d++] = rgba[s + 2];
+    }
+    return out.buffer;
+  }
+  async function fetchBytes(url) {
+    const res = await fetch(url);
+    const reader = res.body.getReader();
+    const chunks = [];
+    let size = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      chunks.push(value);
+      size += value.length;
+      loadedBytes += value.length;
+      progress();
+      loadtext.textContent = `Načítavam geometriu… ${fmt(loadedBytes / 1e6, 1)} / ${fmt(totalBytes / 1e6, 1)} MB`;
+    }
+    const out = new Uint8Array(size);
+    let o = 0;
+    for (const c of chunks) { out.set(c, o); o += c.length; }
+    return out.buffer;
+  }
+  let triangles = 0;
+  function addPart(buf) {
+    const dv = new DataView(buf);
+    let p = 0;
+    while (p < buf.byteLength) {
+      const mat = dv.getUint32(p, true), nv = dv.getUint32(p + 4, true), ni = dv.getUint32(p + 8, true);
+      p += 16;
+      const pos = new Float32Array(buf, p, nv * 3); p += nv * 12;
+      const nrm = new Int8Array(buf, p, nv * 4); p += nv * 4;
+      const uv = new Float32Array(buf, p, nv * 2); p += nv * 8;
+      const idx = new Uint16Array(buf, p, ni); p += ni * 2; p += (4 - (ni * 2) % 4) % 4;
+      const g = new THREE.BufferGeometry();
+      g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      g.setAttribute('normal', new THREE.InterleavedBufferAttribute(new THREE.InterleavedBuffer(nrm, 4), 3, 0, true));
+      g.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+      g.setIndex(new THREE.BufferAttribute(idx, 1));
+      g.computeBoundingSphere();
+      const mesh = new THREE.Mesh(g, materials[mat]);
+      const far = /terrain_(mid|far)/.test(manifest.materials[mat].name);
+      mesh.castShadow = !far;
+      mesh.receiveShadow = true;
+      scene.add(mesh);
+      triangles += ni / 3;
+    }
+  }
+  const parts = await Promise.all(manifest.parts.map((u, i) => fetchPart(u, i)));
+  loadtext.textContent = 'Skladám scénu…';
+  parts.forEach(addPart);
+
+  // lap line + start/finish
+  const lap = manifest.lap.map(p => new THREE.Vector3(p[0], p[1], p[2]));
+  const cum = [0];
+  for (let i = 1; i < lap.length; i++) cum.push(cum[i - 1] + lap[i].distanceTo(lap[i - 1]));
+  const lapLen = cum[cum.length - 1] + lap[lap.length - 1].distanceTo(lap[0]);
+  const ribbon = new THREE.BufferGeometry().setFromPoints([...lap, lap[0]].map(v => v.clone().add(new THREE.Vector3(0, 0.15, 0))));
+  const lapLine = new THREE.Line(ribbon, new THREE.LineBasicMaterial({ color: 0xf3c331, transparent: true, opacity: 0.85 }));
+  lapLine.visible = false;
+  scene.add(lapLine);
+
+  // profile chart (distance vs altitude)
+  const alts = lap.map(v => v.y + H0);
+  const aMin = Math.floor(Math.min(...alts)), aMax = Math.ceil(Math.max(...alts));
+  document.getElementById('climb').textContent = fmt(Math.max(...alts) - Math.min(...alts), 1);
+  document.getElementById('lapm').textContent = fmt(manifest.length);
+  const svg = document.getElementById('profile');
+  const W = 400, H = 86, L = 30, R = 6, T = 6, B = 16;
+  const sx = d => L + d / lapLen * (W - L - R);
+  const sy = a => T + (aMax - a) / (aMax - aMin) * (H - T - B);
+  const pts = lap.map((v, i) => `${sx(cum[i]).toFixed(1)},${sy(alts[i]).toFixed(1)}`);
+  let s = '';
+  for (const a of [aMin, Math.round((aMin + aMax) / 2), aMax]) {
+    s += `<line x1="${L}" x2="${W - R}" y1="${sy(a)}" y2="${sy(a)}" stroke="rgba(255,255,255,.1)"/>`;
+    s += `<text x="${L - 4}" y="${sy(a) + 3}" fill="#a3ada8" font-size="9" text-anchor="end" font-family="IBM Plex Mono, monospace">${a}</text>`;
+  }
+  for (let d = 0; d <= lapLen; d += 250) {
+    s += `<text x="${sx(d)}" y="${H - 3}" fill="#a3ada8" font-size="9" text-anchor="middle" font-family="IBM Plex Mono, monospace">${d}</text>`;
+  }
+  s += `<polygon points="${sx(0)},${sy(aMin)} ${pts.join(' ')} ${sx(cum[cum.length - 1])},${sy(aMin)}" fill="rgba(243,195,49,.16)"/>`;
+  s += `<polyline points="${pts.join(' ')}" fill="none" stroke="#f3c331" stroke-width="1.8" stroke-linejoin="round"/>`;
+  s += `<line id="cursor" x1="${L}" x2="${L}" y1="${T}" y2="${H - B}" stroke="#eef1ec" stroke-width="1"/>`;
+  s += `<circle id="dot" cx="${L}" cy="${sy(alts[0])}" r="3.5" fill="#eef1ec"/>`;
+  svg.innerHTML = s;
+  const cursor = svg.querySelector('#cursor'), dot = svg.querySelector('#dot');
+  const posD = document.getElementById('pos-d'), posH = document.getElementById('pos-h'), posS = document.getElementById('pos-s');
+
+  function sampleLap(d) {
+    d = ((d % lapLen) + lapLen) % lapLen;
+    let i = 0;
+    while (i < cum.length - 1 && cum[i + 1] <= d) i++;
+    const a = lap[i], b = lap[(i + 1) % lap.length];
+    const seg = (i + 1 < cum.length ? cum[i + 1] : lapLen) - cum[i];
+    return { p: a.clone().lerp(b, seg > 0 ? (d - cum[i]) / seg : 0), i };
+  }
+  function showPos(d) {
+    d = ((d % lapLen) + lapLen) % lapLen;
+    const { p } = sampleLap(d);
+    const ahead = sampleLap(d + 10).p;
+    const slope = (ahead.y - p.y) / Math.max(0.1, Math.hypot(ahead.x - p.x, ahead.z - p.z)) * 100;
+    cursor.setAttribute('x1', sx(d)); cursor.setAttribute('x2', sx(d));
+    dot.setAttribute('cx', sx(d)); dot.setAttribute('cy', sy(p.y + H0));
+    posD.textContent = fmt(d);
+    posH.textContent = fmt(p.y + H0, 1);
+    posS.textContent = (slope > 0 ? '+' : '') + fmt(slope, 1);
+  }
+
+  // views
+  const start = manifest.dummies.AC_START_0;
+  const sp = new THREE.Vector3(...start.pos), sf = new THREE.Vector3(...start.fwd).normalize();
+  let driving = false, driveD = 0;
+  const driveBtn = document.getElementById('drive');
+  function stopDrive() {
+    driving = false;
+    driveBtn.textContent = '▶ Prejdi kolo';
+    controls.enabled = true;
+  }
+  function setView(name) {
+    stopDrive();
+    lapLine.visible = name === 'top';
+    if (name === 'start') {
+      camera.position.copy(sp).addScaledVector(sf, -10).add(new THREE.Vector3(0, 3.5, 0));
+      controls.target.copy(sp).addScaledVector(sf, 35).add(new THREE.Vector3(0, 1, 0));
+    } else if (name === 'top') {
+      camera.position.set(40, 950, 120);
+      controls.target.set(40, 0, 0);
+    } else if (manifest.landmarks[name]) {
+      const t = new THREE.Vector3(...manifest.landmarks[name]);
+      const eye = sampleLap(130).p.add(new THREE.Vector3(0, 48, 0));   // drone height, above the campus roofs
+      camera.position.copy(eye);
+      controls.target.copy(eye).add(t.clone().sub(eye).normalize().multiplyScalar(60));
+    }
+    controls.update();
+    document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === name)));
+  }
+  document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+  driveBtn.addEventListener('click', () => {
+    if (driving) { stopDrive(); return; }
+    document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+    lapLine.visible = false;
+    driving = true;
+    controls.enabled = false;
+    driveBtn.textContent = '❚❚ Zastav';
+  });
+  canvas.addEventListener('pointerdown', () => { if (driving) stopDrive(); });
+
+  window.lookAt = (x, y, z, tx, ty, tz) => {     // for inspecting spots from the console
+    stopDrive(); camera.position.set(x, y, z); controls.target.set(tx, ty, tz); controls.update();
+  };
+  setView('start');
+  showPos(0);
+  document.getElementById('loader').hidden = true;
+
+  const speed = 19; // m/s ≈ 70 km/h
+  let last = performance.now();
+  const smoothLook = new THREE.Vector3().copy(controls.target);
+  renderer.setAnimationLoop(now => {
+    const dt = Math.min(0.1, (now - last) / 1000);
+    last = now;
+    if (driving) {
+      driveD = (driveD + speed * dt) % lapLen;
+      const eye = sampleLap(driveD).p.add(new THREE.Vector3(0, 1.25, 0));
+      const look = sampleLap(driveD + 22).p.add(new THREE.Vector3(0, 1.0, 0));
+      smoothLook.lerp(look, 1 - Math.exp(-dt * 4));
+      camera.position.copy(eye);
+      camera.lookAt(smoothLook);
+      controls.target.copy(smoothLook);
+      showPos(driveD);
+    } else {
+      controls.update();
+      smoothLook.copy(controls.target);
+    }
+    // keep the shadow map centred on what the camera looks at
+    const focus = controls.target;
+    sun.target.position.copy(focus);
+    sun.position.copy(focus).addScaledVector(sunDir, 700);
+    renderer.render(scene, camera);
+  });
+})().catch(err => {
+  document.getElementById('loadtext').textContent = 'Náhľad sa nepodarilo načítať: ' + err.message;
+});
+</script>
+</body></html>
