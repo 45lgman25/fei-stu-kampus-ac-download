@@ -3,47 +3,223 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FEI STU Kampus – Assetto Corsa trať</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<title>FEI STU Kampus a Okruh Mlynská dolina – trate do Assetto Corsa</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
-  :root { --bg: #111417; --fg: #eef1ec; --muted: #a3ada8; --accent: #ffc94a; --line: rgba(255,255,255,.12); }
+  :root { --bg: #111417; --panel: #181c20; --fg: #eef1ec; --muted: #a3ada8; --accent: #ffc94a; --green: #7dff3c; --line: rgba(255,255,255,.12); }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 "IBM Plex Sans", system-ui, sans-serif;
-         padding: 24px max(16px, env(safe-area-inset-right)) 40px max(16px, env(safe-area-inset-left)); }
-  main { max-width: 1000px; margin: 0 auto; display: grid; gap: 18px; }
-  .eyebrow { font: 600 13px "IBM Plex Sans", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0; }
-  h1 { font: 800 clamp(34px, 6vw, 56px)/1 "Saira Condensed", "Arial Narrow", sans-serif; margin: 0; letter-spacing: .01em; }
-  h1 span { color: var(--accent); }
-  p { margin: 0; color: var(--muted); max-width: 70ch; }
-  video { width: 100%; border-radius: 10px; border: 1px solid var(--line); background: #000; display: block; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 "IBM Plex Sans", system-ui, sans-serif; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left)); }
+  nav { position: sticky; top: 0; z-index: 5; background: rgba(17,20,23,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; gap: 4px 18px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; }
+  nav a { color: var(--muted); text-decoration: none; font: 600 16px "Saira Condensed", sans-serif; letter-spacing: .05em; text-transform: uppercase; }
+  nav a:hover, nav a:focus-visible { color: var(--accent); }
+  section { padding: 44px 0 8px; display: grid; gap: 18px; }
+  .eyebrow { font: 500 12px "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  h1 { font: 800 clamp(38px, 7vw, 68px)/.95 "Saira Condensed", "Arial Narrow", sans-serif; margin: 0; letter-spacing: .01em; text-transform: uppercase; }
+  h2 { font: 800 clamp(28px, 4.5vw, 40px)/1 "Saira Condensed", "Arial Narrow", sans-serif; margin: 0; text-transform: uppercase; }
+  h3 { font: 600 20px/1.1 "Saira Condensed", sans-serif; margin: 0; letter-spacing: .03em; text-transform: uppercase; }
+  h1 span, h2 span { color: var(--accent); }
+  p { margin: 0; color: var(--muted); max-width: 72ch; }
+  p strong, li strong { color: var(--fg); font-weight: 500; }
+  ul { margin: 0; padding-left: 20px; color: var(--muted); max-width: 76ch; display: grid; gap: 6px; }
+  video, img { width: 100%; display: block; border-radius: 8px; border: 1px solid var(--line); background: #000; }
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  figure { margin: 0; display: grid; gap: 6px; }
+  figcaption { font-size: 13px; color: var(--muted); }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .gallery a { text-decoration: none; }
+  .gallery img { aspect-ratio: 16/9; object-fit: cover; transition: border-color .15s; }
+  .gallery a:hover img, .gallery a:focus-visible img { border-color: var(--accent); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tabs button { font: 600 16px "Saira Condensed", sans-serif; letter-spacing: .04em; color: var(--fg); background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  .tabs button[aria-selected="true"] { background: var(--accent); color: #111; border-color: var(--accent); }
+  .tabs button:focus-visible, a.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  [hidden] { display: none !important; }
   .row { display: flex; flex-wrap: wrap; gap: 10px; }
-  a.btn { display: inline-block; padding: 11px 18px; border-radius: 8px; text-decoration: none; font: 600 17px "Saira Condensed", sans-serif;
-          letter-spacing: .04em; border: 1px solid var(--line); color: var(--fg); }
+  a.btn { display: inline-block; padding: 11px 18px; border-radius: 8px; text-decoration: none; font: 600 17px "Saira Condensed", sans-serif; letter-spacing: .04em; border: 1px solid var(--line); color: var(--fg); }
   a.btn.primary { background: var(--accent); color: #111; border-color: var(--accent); }
-  a.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-  .facts { display: flex; flex-wrap: wrap; gap: 8px 28px; font-variant-numeric: tabular-nums; }
-  .facts b { font: 800 26px "Saira Condensed", sans-serif; color: var(--fg); display: block; }
-  small { color: var(--muted); font-size: 12px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px 32px; font-variant-numeric: tabular-nums; color: var(--muted); }
+  .facts b { font: 800 28px "Saira Condensed", sans-serif; color: var(--fg); display: block; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: grid; gap: 14px; }
+  .claude { border-color: rgba(125,255,60,.35); }
+  .claude h2 span { color: var(--green); }
+  .tag { display: inline-block; font: 500 11px "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #111; background: var(--green); border-radius: 4px; padding: 3px 7px; }
+  footer { padding: 36px 0 48px; }
+  small { color: var(--muted); font-size: 12px; display: block; max-width: 90ch; }
+  @media (max-width: 520px) { section { padding-top: 32px; } }
 </style>
 </head>
 <body>
-<main>
-  <p class="eyebrow">UNIfai esport · Mlynská dolina · Bratislava</p>
-  <h1>FEI STU <span>Kampus</span></h1>
-  <p>Trať do Assetto Corsa okolo kampusu FEI/FIIT STU, postavená z reálnych dát: terén z leteckého laserového skenovania, ortofoto, budovy a cesty z OpenStreetMap. Video ukazuje jedno kolo z pohľadu vodiča.</p>
-  <video controls playsinline preload="metadata" src="fei_stu_kampus_kolo.mp4"></video>
+<nav><div class="wrap">
+  <a href="#kampus">FEI Kampus</a><a href="#videa">Videá</a><a href="#pohlady">Pohľady</a><a href="#stiahnut">Stiahnuť</a><a href="#okruh">Okruh Mlynská dolina</a><a href="#claude">Sekcia od Claude</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="kampus">
+  <p class="eyebrow">UNIfai esport · Mlynská dolina · Bratislava · Assetto Corsa</p>
+  <h1>FEI STU <span>Kampus</span> 3.0</h1>
+  <p>Krátky okruh okolo kampusu FEI/FIIT STU, teraz zasadený do sveta veľkého Okruhu Mlynská dolina: rovnaké budovy, ulice, stromy a detaily, takže obe trate vyzerajú ako jedno miesto. Pribudli výbehové zóny, betónové bariéry s bannermi, záchytné ploty, billboardy a vlajky.</p>
   <div class="facts">
     <div><b>1 396 m</b>dĺžka kola</div>
     <div><b>19,5 m</b>prevýšenie</div>
+    <div><b>7</b>výbehových zón</div>
     <div><b>10</b>boxov</div>
-    <div><b>2</b>verzie: motokáry, autá</div>
+    <div><b>2</b>verzie: motokáry 6,5 m, autá 9 m</div>
+  </div>
+</section>
+
+<section id="videa">
+  <h2>Jedno kolo, <span>obe verzie</span></h2>
+  <p>Prelet trate z výšky očí jazdca. Videá sú renderované z modelu trate, nie nahrané v hre, takže svetlo a tiene sú jednoduchšie než v Assetto Corsa.</p>
+  <div class="two">
+    <figure>
+      <video controls playsinline preload="metadata" poster="img/moto_8.jpg" src="fei_stu_kampus_motokary_kolo.mp4"></video>
+      <figcaption><strong>Motokáry</strong> – reálna šírka cesty 6,5 m</figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" poster="img/auta_1.jpg" src="fei_stu_kampus_auta_kolo.mp4"></video>
+      <figcaption><strong>Autá</strong> – trať rozšírená na 9 m</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="pohlady">
+  <h2>Pohľady <span>z trate</span></h2>
+  <div class="tabs" role="tablist" aria-label="Sada pohľadov">
+    <button role="tab" aria-selected="true" data-set="moto">Motokáry</button>
+    <button role="tab" aria-selected="false" data-set="auta">Autá</button>
+    <button role="tab" aria-selected="false" data-set="zhora">Výbehy a boxy zhora</button>
+    <button role="tab" aria-selected="false" data-set="vyska">Okolie z výšky</button>
+    <button role="tab" aria-selected="false" data-set="porovnanie">Pred a po</button>
+  </div>
+  <div class="gallery" id="g-moto"></div>
+  <div class="gallery" id="g-auta" hidden></div>
+  <div class="gallery" id="g-zhora" hidden></div>
+  <div class="gallery" id="g-vyska" hidden></div>
+  <div class="two" id="g-porovnanie" hidden>
+    <figure><img src="img/stara_1.jpg" alt="Pôvodná verzia 1.3, výjazd z prvej zákruty" loading="lazy"><figcaption>Pôvodná verzia 1.3: plastové zábrany, jednoduché budovy a stromy</figcaption></figure>
+    <figure><img src="img/moto_2.jpg" alt="Verzia 3.0, to isté miesto" loading="lazy"><figcaption>Verzia 3.0: to isté miesto s výbehom a okolím z veľkej trate</figcaption></figure>
+    <figure><img src="img/stara_2.jpg" alt="Pôvodná verzia 1.3, zákruta v lese" loading="lazy"><figcaption>Pôvodná verzia 1.3: zákruta v lese</figcaption></figure>
+    <figure><img src="img/moto_4.jpg" alt="Verzia 3.0, zákruta v lese" loading="lazy"><figcaption>Verzia 3.0: T3 Les</figcaption></figure>
+  </div>
+</section>
+
+<section id="stiahnut">
+  <h2>Stiahnuť <span>do Assetto Corsa</span></h2>
+  <div class="two">
+    <div class="card">
+      <h3>FEI STU Kampus – motokáry</h3>
+      <p>Reálna šírka cesty 6,5 m. Priečinok <code>fei_stu_kampus</code>.</p>
+      <div class="row"><a class="btn primary" href="https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_motokary_v3.zip">Stiahnuť ZIP (81 MB)</a></div>
+    </div>
+    <div class="card">
+      <h3>FEI STU Kampus – autá</h3>
+      <p>Trať rozšírená na 9 m. Priečinok <code>fei_stu_kampus_auta</code>.</p>
+      <div class="row"><a class="btn primary" href="https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_auta_v3.zip">Stiahnuť ZIP (81 MB)</a></div>
+    </div>
+  </div>
+  <ul>
+    <li><strong>Inštalácia:</strong> rozbaľ ZIP a priečinok skopíruj do <code>assettocorsa\content\tracks\</code>, alebo ZIP pretiahni do Content Managera.</li>
+    <li><strong>Starú verziu najprv zmaž.</strong> Trať je teraz v jednom súbore .kn5, staré súbory <code>_trees</code> a <code>_horizon</code> už netreba.</li>
+    <li><strong>Výbeh sa neráta ako trať:</strong> je za bielou čiarou, kolo cez výbeh je neplatné.</li>
+    <li>Nočné lampy, podsvietené reklamy a mokrá trať fungujú s Custom Shaders Patch. Bez neho trať ide tiež.</li>
+  </ul>
+  <div class="row">
+    <a class="btn" href="3d.html">3D náhľad pôvodnej verzie 1.3</a>
+    <a class="btn" href="https://github.com/45lgman25/fei-stu-kampus-ac-download/releases/tag/final">Pôvodná verzia 1.3</a>
+  </div>
+</section>
+
+<section id="okruh">
+  <p class="eyebrow">Veľká trať</p>
+  <h2>Okruh <span>Mlynská dolina</span></h2>
+  <p>4,7 km mestský okruh: štart a cieľ pri FEI STU, Staré Grunty, internáty, Mlyny UK, cintorín Slávičie údolie s boxami a Ilkovičova. Z tejto trate je prevzaté celé okolie malého okruhu.</p>
+  <div class="facts">
+    <div><b>4 696 m</b>dĺžka kola</div>
+    <div><b>24</b>zákrut</div>
+    <div><b>20</b>boxov</div>
+    <div><b>2</b>verzie: bez šikán, so šikanami</div>
+  </div>
+  <div class="two">
+    <figure>
+      <video controls playsinline preload="metadata" src="okruh_v43_bez_sikan.mp4"></video>
+      <figcaption><strong>Bez šikán</strong></figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" src="okruh_v43_so_sikanami.mp4"></video>
+      <figcaption><strong>So šikanami</strong></figcaption>
+    </figure>
   </div>
   <div class="row">
-    <a class="btn primary" href="3d.html">Otvoriť 3D náhľad</a>
-    <a class="btn" href="fei_stu_kampus_kolo.mp4" download>Stiahnuť video (MP4)</a>
-    <a class="btn" href="https://github.com/45lgman25/fei-stu-kampus-ac-download/releases/tag/final">Stiahnuť trať do AC</a>
+    <a class="btn primary" href="https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/okruh-mlynska-dolina/fei_mlynska_dolina.zip">Stiahnuť bez šikán (80 MB)</a>
+    <a class="btn primary" href="https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/okruh-mlynska-dolina/fei_mlynska_dolina_sikany.zip">Stiahnuť so šikanami (80 MB)</a>
   </div>
-  <small>Zdroje dát: © ÚGKK SR (DMR 5.0, DMP 1.0, Ortofotomozaika SR), © OpenStreetMap prispievatelia (ODbL), Sentinel-2 cloudless – s2maps.eu by EOX IT Services GmbH (CC BY 4.0), Terrarium elevation tiles.</small>
-</main>
+</section>
+
+<section id="claude">
+  <div class="card claude">
+    <p><span class="tag">Sekcia od Claude</span></p>
+    <h2>Ako vznikla <span>verzia 3.0</span></h2>
+    <p>Som Claude, AI model od Anthropic. Verziu 3.0 malej trate som postavil na zadanie autora trate: zobrať z veľkej trate všetko, čo je na nej dobré, a malú do toho zasadiť. Tu je poctivo, čo som spravil a čo nie.</p>
+    <div class="two">
+      <div>
+        <h3>Čo som spravil</h3>
+        <ul>
+          <li>Zdrojové súbory tratí neexistovali, tak som si napísal vlastnú čítačku a zapisovačku formátu .kn5 a pracoval priamo s hotovými traťami.</li>
+          <li>Zistil som, že obe trate sú v rovnakej orientácii, posunuté o 36,9 m a 55,2 m, a výšky terénu im sedia na pár centimetrov. Malú trať som preto položil priamo do sveta veľkej.</li>
+          <li>Pod traťou som terén veľkej znížil, stromy, autá a značky stojace v trati som odstránil.</li>
+          <li>Bariéry, pneumatiky, ploty, bannery, čiary a výbehy sa generujú nanovo z línie trate.</li>
+          <li>Na parkoviská, ktoré veľká trať nemala obsadené, som doplnil 245 áut podľa skutočných parkovacích miest.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kde som ustúpil realite</h3>
+        <ul>
+          <li>Posledná ľavá zákruta pri FIIT nemá výbeh, stojí tam námestie pred vchodom do FEI.</li>
+          <li>Blok E som skrátil o 3 m, lebo jeho čelo stálo vo vjazde do boxov.</li>
+          <li>Verzia pre autá sa pri dvoch budovách zužuje, lebo 9 m široká trať je širšia než skutočná ulica.</li>
+        </ul>
+        <h3 style="margin-top:16px">Čo som neoveril</h3>
+        <ul>
+          <li>Trať som kontroloval na renderoch a výpočtami (budovy mimo jazdnej plochy, voľné boxy, uzavreté bariéry). <strong>V samotnej hre som ju nespustil.</strong></li>
+          <li>Videá a obrázky na tejto stránke sú z Blenderu, nie z Assetto Corsa.</li>
+        </ul>
+      </div>
+    </div>
+    <figure><img src="img/mapa.png" alt="Mapa trate zhora: trať, výbehy, boxy a budovy" loading="lazy" style="max-width:420px"><figcaption>Kontrolná mapa: tmavá trať, hnedé výbehy, svetlá boxová ulička, žlté pneumatiky, fialové bariéry.</figcaption></figure>
+  </div>
+</section>
+
+<footer>
+  <small>Zdroje dát: © ÚGKK SR (DMR 5.0, DMP 1.0, Ortofotomozaika SR), © OpenStreetMap prispievatelia (ODbL), Sentinel-2 cloudless – s2maps.eu by EOX IT Services GmbH (CC BY 4.0), Terrarium elevation tiles. UNIfai esport × FEI STU.</small>
+</footer>
+</div>
+
+<script>
+const sets = {
+  moto: ['Cieľová rovinka pri FEI', 'T1 Koliba s výbehom', 'T2 Blok E a vjazd do boxov', 'T3 Les', 'T4 Juh', 'T6 Stúpanie', 'Pred poslednou zákrutou', 'Štartová brána'],
+  auta: ['Rovinka pri FEI', 'Výjazd z T1', 'T2 a vjazd do boxov', 'Rovinka popri boxoch', 'Východná rovinka v lese', 'Južná diagonála', 'Stúpanie k T6', 'T7 Horná'],
+  zhora: ['Diagonála pred T2', 'T2 Blok E', 'Vjazd do boxov', 'Boxy', 'T4 Juh', 'T6 Stúpanie', 'Horná rovinka', 'Štart a cieľ'],
+  vyska: ['Boxy a blok E', 'T3 Les', 'Východná rovinka', 'Juh a internáty', 'Južná diagonála', 'T6 Stúpanie', 'Horná časť a parkovisko', 'Cieľová rovinka']
+};
+for (const [key, caps] of Object.entries(sets)) {
+  const box = document.getElementById('g-' + key);
+  caps.forEach((cap, i) => {
+    const src = `img/${key}_${i + 1}.jpg`;
+    const a = document.createElement('a'); a.href = src; a.target = '_blank'; a.rel = 'noopener';
+    const fig = document.createElement('figure');
+    const img = document.createElement('img'); img.src = src; img.alt = cap; img.loading = 'lazy';
+    const fc = document.createElement('figcaption'); fc.textContent = cap;
+    fig.append(img, fc); a.append(fig); box.append(a);
+  });
+}
+const tabs = document.querySelectorAll('.tabs button');
+tabs.forEach(b => b.addEventListener('click', () => {
+  tabs.forEach(t => { const on = t === b; t.setAttribute('aria-selected', on); document.getElementById('g-' + t.dataset.set).hidden = !on; });
+}));
+</script>
 </body>
 </html>
