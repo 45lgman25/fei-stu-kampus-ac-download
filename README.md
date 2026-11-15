@@ -1,20 +1,31 @@
-# FEI STU Kampus – Assetto Corsa trať (UNIfai esport)
+# FEI STU Kampus – Assetto Corsa trať (UNIfai esport) – verzia 3.0
 
-Pouličný okruh kampusom FEI/FIIT STU v Mlynskej doline (Bratislava), v smere hodinových ručičiek.
-Reálny terén z laserového skenovania (DMR 5.0), ortofoto, budovy a cesty z OpenStreetMap,
-celá trať lemovaná bariérami, boxy popri východnej rovinke, branding UNIfai esport × FEI STU.
+Pouličný okruh kampusom FEI/FIIT STU v Mlynskej doline (Bratislava), 1 396 m, v smere hodinových ručičiek.
+Verzia 3.0 je zasadená do sveta veľkého Okruhu Mlynská dolina: rovnaké budovy, ulice, stromy a detaily.
 
-## Stiahnutie (najnovšia verzia)
-- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/releases/latest/download/fei_stu_kampus_motokary.zip)
-- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/releases/latest/download/fei_stu_kampus_auta.zip)
+**Videá, pohľady a 3D náhľad:** https://45lgman25.github.io/fei-stu-kampus-ac-download/
 
-Obe sú samostatné trate, dajú sa mať nainštalované naraz. Staršie verzie sú v sekcii **Releases**.
+## Stiahnutie (verzia 3.0)
+- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary_v3.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_motokary_v3.zip) (81 MB)
+- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta_v3.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_auta_v3.zip) (81 MB)
+
+Obe sú samostatné trate, dajú sa mať nainštalované naraz. Pôvodná verzia 1.3 ostáva v sekcii **Releases**.
+
+## Čo je nové vo verzii 3.0
+- Celé okolie (budovy FEI, FIIT a internátov, ulice, parkoviská, stromy, kríky, ploty, značky, horizont) je z Okruhu Mlynská dolina.
+- Výbehové zóny v 7 zákrutách (7 až 13 m asfaltu, vzadu pneumatiky a betónová bariéra). Výbeh je za bielou čiarou, kolo sa tam neráta.
+- Betónové bariéry s bannermi UNIfai esport / FEI STU, záchytné ploty, šípky, brzdné tabule, billboardy, vlajky.
+- Krajné čiary, stredová čiara a ploché maľované obrubníky.
+- TV kamery do replayu a názvy zákrut.
+- Trasa, šírka, výškový profil, boxy a štartový rošt sa nemenili.
+
+Verzia 3.0 bola skontrolovaná na renderoch a výpočtami (budovy mimo jazdnej plochy, voľné boxy, uzavreté bariéry), v hre zatiaľ nie.
 
 ## Inštalácia
 1. Rozbaľ ZIP.
 2. Priečinok (`fei_stu_kampus` alebo `fei_stu_kampus_auta`) skopíruj do `...\steamapps\common\assettocorsa\content\tracks\`
-   (alebo ZIP pretiahni do Content Managera). Staršiu verziu najprv zmaž.
-3. Na plnú grafiku: Content Manager + Custom Shaders Patch + Pure/Sol (GrassFX, RainFX, nočné svetlá).
+   (alebo ZIP pretiahni do Content Managera). **Staršiu verziu najprv zmaž** – trať je teraz v jednom súbore .kn5.
+3. Nočné lampy, podsvietené reklamy a mokrá trať: Content Manager + Custom Shaders Patch.
 
 Podrobnosti sú v `NAVOD.txt` v ZIPe.
 
