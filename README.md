@@ -14,7 +14,7 @@ Obe sú samostatné trate, dajú sa mať nainštalované naraz. Pôvodná verzia
 ## Čo je nové vo verzii 3.0
 - Celé okolie (budovy FEI, FIIT a internátov, ulice, parkoviská, stromy, kríky, ploty, značky, horizont) je z Okruhu Mlynská dolina.
 - Výbehové zóny v 7 zákrutách (7 až 13 m asfaltu, vzadu pneumatiky a betónová bariéra). Výbeh je za bielou čiarou, kolo sa tam neráta.
-- Betónové bariéry s bannermi UNIfai esport / FEI STU, záchytné ploty, šípky, brzdné tabule, billboardy, vlajky.
+- Betónové bariéry s bannermi UNIfai esport / FEI STU, záchytné ploty, šípky, brzdné tabule, logo tabule, vlajky.
 - Krajné čiary, stredová čiara a ploché maľované obrubníky.
 - TV kamery do replayu a názvy zákrut.
 - Trasa, šírka, výškový profil, boxy a štartový rošt sa nemenili.
