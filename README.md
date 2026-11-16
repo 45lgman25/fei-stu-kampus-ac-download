@@ -1,7 +1,7 @@
 # FEI STU Kampus – Assetto Corsa trať (UNIfai esport) – verzia 3.0
 
 Pouličný okruh kampusom FEI/FIIT STU v Mlynskej doline (Bratislava), 1 396 m, v smere hodinových ručičiek.
-Verzia 3.0 je zasadená do sveta veľkého Okruhu Mlynská dolina: rovnaké budovy, ulice, stromy a detaily.
+Verzia 3.0 je zasadená do sveta veľkého Okruhu Mlynská dolina (verzia 4.5, vrátane novej Mlynskej kolibu pri trati): rovnaké budovy, ulice, stromy a detaily.
 
 **Videá, pohľady a 3D náhľad:** https://45lgman25.github.io/fei-stu-kampus-ac-download/
 
