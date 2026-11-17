@@ -1,17 +1,17 @@
-# UNIlap FEI RING (FEI STU Kampus) – Assetto Corsa trať (UNIfai esport) – verzia 3.4
+# UNIlap FEI RING (FEI STU Kampus) – Assetto Corsa trať (UNIfai esport) – verzia 3.5
 
 Pouličný okruh kampusom FEI/FIIT STU v Mlynskej doline (Bratislava), 1 396 m, v smere hodinových ručičiek.
-Verzia 3.4 je zasadená do sveta veľkého Okruhu Mlynská dolina (verzia 4.5, vrátane novej Mlynskej kolibu pri trati): rovnaké budovy, ulice, stromy a detaily.
+Verzia 3.5 je zasadená do sveta veľkého Okruhu Mlynská dolina (verzia 4.5, vrátane novej Mlynskej kolibu pri trati): rovnaké budovy, ulice, stromy a detaily.
 
 **Videá, pohľady a 3D náhľad:** https://45lgman25.github.io/fei-stu-kampus-ac-download/
 
-## Stiahnutie (verzia 3.4)
-- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary_v3_4.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_motokary_v3_4.zip) (81 MB)
-- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta_v3_4.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_auta_v3_4.zip) (81 MB)
+## Stiahnutie (verzia 3.5)
+- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary_v3_5.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_motokary_v3_5.zip) (81 MB)
+- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta_v3_5.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_auta_v3_5.zip) (81 MB)
 
 Obe sú samostatné trate, dajú sa mať nainštalované naraz. Pôvodná verzia 1.3 ostáva v sekcii **Releases**.
 
-## Čo je nové vo verzii 3.4
+## Čo je nové vo verzii 3.5
 - Celé okolie (budovy FEI, FIIT a internátov, ulice, parkoviská, stromy, kríky, ploty, značky, horizont) je z Okruhu Mlynská dolina.
 - Trať sa volá UNIlap FEI RING. Bannery sú v modrej farbe FEI (čierne dosky sú preč), výbehové zóny a billboardy sú odstránené.
 - Betónové bariéry s bannermi UNIfai esport / FEI STU, záchytné ploty, šípky, brzdné tabule, logo tabule, vlajky.
@@ -20,9 +20,10 @@ Obe sú samostatné trate, dajú sa mať nainštalované naraz. Pôvodná verzia
 - 3.2: vyčistená zem pri trati (vrstvy, ktoré sa pretínali, črepiny chodníkov, čiary na tráve), bannery UNIfai na múroch v čiernej a limetkovej, okrúhle kolesá zaparkovaných áut, trsy trávy vo farbe trávnika, tabule STU FEI.
 - 3.3: vrátnica bloku E podľa skutočnosti (presklené dvere so strieškou v nízkej spojovacej budove severne od krídla E).
 - 3.4: preč sú zaparkované autá, ktoré stáli jedno v druhom, karosérie áut majú hladšie tieňovanie, trávnik na svahoch pri trati je jednoliaty, bannery zalomené cez roh múru sú odstránené.
+- 3.5: kontrola celého súboru trate – odstránené prázdne siete, doplnený trávnik už neprekrýva chodníky a parkoviská.
 - Trasa, šírka, výškový profil, boxy a štartový rošt sa nemenili.
 
-Verzia 3.4 bola skontrolovaná na renderoch a výpočtami (budovy mimo jazdnej plochy, voľné boxy, uzavreté bariéry), v hre zatiaľ nie.
+Verzia 3.5 bola skontrolovaná na renderoch a výpočtami (budovy mimo jazdnej plochy, voľné boxy, uzavreté bariéry), v hre zatiaľ nie.
 
 ## Inštalácia
 1. Rozbaľ ZIP.
