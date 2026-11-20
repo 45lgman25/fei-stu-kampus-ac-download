@@ -1,17 +1,17 @@
-# UNIlap FEI RING (FEI STU Kampus) – Assetto Corsa trať (UNIfai esport) – verzia 4.0
+# UNIlap FEI RING (FEI STU Kampus) – Assetto Corsa trať (UNIfai esport) – verzia 4.1
 
 Pouličný okruh kampusom FEI/FIIT STU v Mlynskej doline (Bratislava), 1 396 m, v smere hodinových ručičiek.
-Verzia 4.0 je zasadená do sveta veľkého Okruhu Mlynská dolina (verzia 4.5, vrátane novej Mlynskej kolibu pri trati): rovnaké budovy, ulice, stromy a detaily.
+Verzia 4.1 je zasadená do sveta veľkého Okruhu Mlynská dolina (verzia 4.5, vrátane novej Mlynskej kolibu pri trati): rovnaké budovy, ulice, stromy a detaily.
 
 **Videá, pohľady a 3D náhľad:** https://45lgman25.github.io/fei-stu-kampus-ac-download/
 
-## Stiahnutie (verzia 4.0)
-- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary_v4_0.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_motokary_v4_0.zip) (84 MB)
-- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta_v4_0.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_auta_v4_0.zip) (84 MB)
+## Stiahnutie (verzia 4.1)
+- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary_v4_1.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_motokary_v4_1.zip) (84 MB)
+- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta_v4_1.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_auta_v4_1.zip) (84 MB)
 
 Obe sú samostatné trate, dajú sa mať nainštalované naraz. Pôvodná verzia 1.3 ostáva v sekcii **Releases**.
 
-## Čo je nové vo verzii 4.0
+## Čo je nové vo verzii 4.1
 - Celé okolie (budovy FEI, FIIT a internátov, ulice, parkoviská, stromy, kríky, ploty, značky, horizont) je z Okruhu Mlynská dolina.
 - Trať sa volá UNIlap FEI RING. Bannery sú v modrej farbe FEI (čierne dosky sú preč), výbehové zóny a billboardy sú odstránené.
 - Betónové bariéry s bannermi UNIfai esport / FEI STU, záchytné ploty, šípky, brzdné tabule, logo tabule, vlajky.
@@ -25,9 +25,10 @@ Obe sú samostatné trate, dajú sa mať nainštalované naraz. Pôvodná verzia
 - 3.7: vjazd do boxov vedie zeleným pruhom za červeno-bielou bariérou (odbočka hneď za zákrutou pod blokom E), pruh je platný povrch a má značky 30. Vnútorné biele čiary vo vlásenkach sú hladké. Výklenok bariéry na križovatke pri štartovej bráne je preč a cesta odtiaľ smerom k FIIT je postavená nanovo s chodníkom. Tabuľa na námestí pri parkovisku je panel STU FEI, vlajky nevrhajú tieň samy na seba, parkovacie čiary a priechody nezasahujú do trate, tráva nerastie na budovách, autá na parkoviskách nestoja jedno v druhom.
 - 3.8: osem výbehových zón (výklenkov bariér) pri odbočkách je zrušených, bariéra tam ide rovno popri trati. Dve zóny sú naopak hlbšie, asi 17 m od stredu trate: na vonkajšej strane vlásenky pri parkovisku a v zákrute na juhovýchodnom konci okruhu.
 - 4.0: veľký balík opráv. Výbehové zóny: výklenky bariér pri odbočkách sú zrušené, pri vlásenke pri parkovisku ostáva pôvodná zóna a z nej vedie 30 m úniková cesta po skutočnej ulici s bariérami po stranách a na konci. Ideálna stopa je prepočítaná na pretekársku (predtým išla stredom trate). Nová štartová brána, od veľkého Okruhu Mlynská dolina sú prevzaté vrátnica pri bloku A, detaily fasád FEI, dvere, kvetináče a plocha pred blokom. Cesty od trate k FIIT (pri bráne aj na severnej križovatke) sú postavené nanovo s chodníkom, starý kľukatý oporný múrik je preč. Terén pri chodníkoch už nemá svetlé pásy z leteckej fotky, smrek pri Mlynskej kolibe je nový. V noci svietia aj lampy v kampuse, fasády FEI a FIIT, panel STU FEI, tabule a vlajky.
+- 4.1: úniková cesta pri vlásenke je modrá ako ostatné výbehy, so zelenými pruhmi po krajoch a zelenými šípkami na konci. Panel STU FEI na námestí pri parkovisku je svetelný box, svieti stále. Cesta s chodníkom na juhozápade (za betónovou bariérou) je postavená nanovo, tráva pri perforovaných a panelových stenách je preč.
 - Trasa, šírka, výškový profil, boxy a štartový rošt sa nemenili.
 
-Verzia 4.0 bola skontrolovaná na renderoch a výpočtami (budovy mimo jazdnej plochy, voľné boxy, uzavreté bariéry), v hre zatiaľ nie.
+Verzia 4.1 bola skontrolovaná na renderoch a výpočtami (budovy mimo jazdnej plochy, voľné boxy, uzavreté bariéry), v hre zatiaľ nie.
 
 ## Inštalácia
 1. Rozbaľ ZIP.
