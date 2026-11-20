@@ -1,17 +1,17 @@
-# UNIlap FEI RING (FEI STU Kampus) – Assetto Corsa trať (UNIfai esport) – verzia 4.6
+# UNIlap FEI RING (FEI STU Kampus) – Assetto Corsa trať (UNIfai esport) – verzia 4.7
 
 Pouličný okruh kampusom FEI/FIIT STU v Mlynskej doline (Bratislava), 1 396 m, v smere hodinových ručičiek.
-Verzia 4.6 je zasadená do sveta veľkého Okruhu Mlynská dolina (verzia 4.6, vrátane novej Mlynskej kolibu pri trati): rovnaké budovy, ulice, stromy a detaily.
+Verzia 4.7 je zasadená do sveta veľkého Okruhu Mlynská dolina (verzia 4.7, vrátane novej Mlynskej kolibu pri trati): rovnaké budovy, ulice, stromy a detaily.
 
 **Videá, pohľady a 3D náhľad:** https://45lgman25.github.io/fei-stu-kampus-ac-download/
 
-## Stiahnutie (verzia 4.6)
-- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary_v4_6.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_motokary_v4_6.zip) (84 MB)
-- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta_v4_6.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_auta_v4_6.zip) (84 MB)
+## Stiahnutie (verzia 4.7)
+- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary_v4_7.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_motokary_v4_7.zip) (84 MB)
+- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta_v4_7.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_auta_v4_7.zip) (84 MB)
 
 Obe sú samostatné trate, dajú sa mať nainštalované naraz. Pôvodná verzia 1.3 ostáva v sekcii **Releases**.
 
-## Čo je nové vo verzii 4.6
+## Čo je nové vo verzii 4.7
 - Celé okolie (budovy FEI, FIIT a internátov, ulice, parkoviská, stromy, kríky, ploty, značky, horizont) je z Okruhu Mlynská dolina.
 - Trať sa volá UNIlap FEI RING. Bannery sú v modrej farbe FEI (čierne dosky sú preč), výbehové zóny a billboardy sú odstránené.
 - Betónové bariéry s bannermi UNIfai esport / FEI STU, záchytné ploty, šípky, brzdné tabule, logo tabule, vlajky.
@@ -31,9 +31,10 @@ Obe sú samostatné trate, dajú sa mať nainštalované naraz. Pôvodná verzia
 - 4.4: druhá úniková cesta po skutočnej ulici na juhozápade (30 m na západ popri parkovisku, bariéry, plot, modrý povrch so zelenými pruhmi a šípkami). Úzky pás medzi krajnou čiarou a bariérou je späť asfaltový, modré ostali len skutočné výbehové zóny. Miesta v boxoch sú vyznačené modrou farbou FEI.
 - 4.5: ústie druhej únikovej cesty je prerobené načisto (modrý povrch až po krajnú čiaru trate, bariéry odrezané na rovno, bez zvyškov starého pásu).
 - 4.6: zelené šípky sú po celej dĺžke oboch únikových ciest, bariéra pri ústí únikovej cesty pri vlásenke nadväzuje plynulo (bez schodov).
+- 4.7: vychodené chodníčky cez trávniky majú farbu udupanej hliny namiesto žltozelenej. Celé okolie trate bolo prejdené na 56 kontrolných pohľadoch.
 - Trasa, šírka, výškový profil, boxy a štartový rošt sa nemenili.
 
-Verzia 4.6 bola skontrolovaná na renderoch a výpočtami (budovy mimo jazdnej plochy, voľné boxy, uzavreté bariéry), v hre zatiaľ nie.
+Verzia 4.7 bola skontrolovaná na renderoch a výpočtami (budovy mimo jazdnej plochy, voľné boxy, uzavreté bariéry), v hre zatiaľ nie.
 
 ## Inštalácia
 1. Rozbaľ ZIP.
