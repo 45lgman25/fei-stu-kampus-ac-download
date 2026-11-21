@@ -1,17 +1,17 @@
-# UNIlap FEI RING (FEI STU Kampus) – Assetto Corsa trať (UNIfai esport) – verzia 5.0
+# UNIlap FEI RING (FEI STU Kampus) – Assetto Corsa trať (UNIfai esport) – verzia 5.1
 
 Pouličný okruh kampusom FEI/FIIT STU v Mlynskej doline (Bratislava), 1 396 m, v smere hodinových ručičiek.
-Verzia 5.0 je zasadená do sveta veľkého Okruhu Mlynská dolina (verzia 5.0, vrátane novej Mlynskej kolibu pri trati): rovnaké budovy, ulice, stromy a detaily.
+Verzia 5.1 je zasadená do sveta veľkého Okruhu Mlynská dolina (verzia 5.1, vrátane novej Mlynskej kolibu pri trati): rovnaké budovy, ulice, stromy a detaily.
 
 **Videá, pohľady a 3D náhľad:** https://45lgman25.github.io/fei-stu-kampus-ac-download/
 
-## Stiahnutie (verzia 5.0)
-- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary_v5_0.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_motokary_v5_0.zip) (84 MB)
-- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta_v5_0.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_auta_v5_0.zip) (84 MB)
+## Stiahnutie (verzia 5.1)
+- **Motokáry** (reálna šírka cesty 6,5 m): [fei_stu_kampus_motokary_v5_1.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_motokary_v5_1.zip) (84 MB)
+- **Autá** (trať rozšírená na 9 m): [fei_stu_kampus_auta_v5_1.zip](https://github.com/45lgman25/fei-stu-kampus-ac-download/raw/main/fei-stu-kampus-v3/fei_stu_kampus_auta_v5_1.zip) (84 MB)
 
 Obe sú samostatné trate, dajú sa mať nainštalované naraz. Pôvodná verzia 1.3 ostáva v sekcii **Releases**.
 
-## Čo je nové vo verzii 5.0
+## Čo je nové vo verzii 5.1
 - Celé okolie (budovy FEI, FIIT a internátov, ulice, parkoviská, stromy, kríky, ploty, značky, horizont) je z Okruhu Mlynská dolina.
 - Trať sa volá UNIlap FEI RING. Bannery sú v modrej farbe FEI (čierne dosky sú preč), výbehové zóny a billboardy sú odstránené.
 - Betónové bariéry s bannermi UNIfai esport / FEI STU, záchytné ploty, šípky, brzdné tabule, logo tabule, vlajky.
@@ -35,9 +35,10 @@ Obe sú samostatné trate, dajú sa mať nainštalované naraz. Pôvodná verzia
 - 4.8: z ciest, chodníkov a čiar v okolí trate je odstránených 216 trojuholníkov postavených na hranu (črepiny) a lavičky, značky a kríky, ktoré viseli nad zemou alebo boli v nej zapustené, stoja na zemi.
 - 4.9: nočné osvetlenie je prepísané rovnakým spôsobom ako na veľkom Okruhu Mlynská dolina: každá lampa pri trati aj v kampuse má vlastné svetlo (predtým sa zlievali do jedného na 40 m), pribudli svetlá pod štartovou bránou a pod stanmi v boxoch, okná sa rozsvecujú o chvíľu skôr než lampy. Fasády a bariéry už samy nesvietia.
 - 5.0: zaparkované autá majú novú, štyrikrát jemnejšiu textúru (tieňovaný lak, švy a kľučky dverí, svetlomety, zadné svetlá, ŠPZ, sklá s odleskom, zliatinové kolesá) a lesklejší lak.
+- 5.1: úzky pás tesne pri bariérach je brzdiaci povrch – kto sa o bariéru oprie alebo po nej ide, stráca rýchlosť (samotný odraz od steny trať zmeniť nevie). Z parkovísk je preč 107 áut, ktoré stáli jedno v druhom, a 40 hrubých áut do 85 m od trate má podrobný model.
 - Trasa, šírka, výškový profil, boxy a štartový rošt sa nemenili.
 
-Verzia 5.0 bola skontrolovaná na renderoch a výpočtami (budovy mimo jazdnej plochy, voľné boxy, uzavreté bariéry), v hre zatiaľ nie.
+Verzia 5.1 bola skontrolovaná na renderoch a výpočtami (budovy mimo jazdnej plochy, voľné boxy, uzavreté bariéry), v hre zatiaľ nie.
 
 ## Inštalácia
 1. Rozbaľ ZIP.
